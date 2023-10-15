@@ -1,0 +1,20 @@
+[
+    {
+        "content": "Great post!",
+        "date_created": "2023-10-09T20:42:28Z",
+        "user_id": 1,
+        "post_id": 1
+    },
+    {
+        "content": "Awesome!",
+        "date_created": "2023-10-09T20:42:28Z",
+        "user_id": 2,
+        "post_id": 2
+    },
+    {
+        "content": "Cool stuff!",
+        "date_created": "2023-10-09T20:42:28Z",
+        "user_id": 3,
+        "post_id": 3
+    }
+]
