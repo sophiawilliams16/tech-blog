@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
+    // route is expecting email
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -27,6 +28,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // route expecting password 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -48,6 +50,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// just destroying a session, no input required for this route 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
