@@ -1,17 +1,18 @@
 [
   {
-    "name": "Test",
-    "content": "Lorem Ipsum", 
+    "name": "UI Design Tips",
+    "content": 
+    "User Interface design is hard to master. Here are some tips to help you ....", 
     "user_id": 1
   },
   {
-    "name": "Test",
-    "content": "Lorem Ipsum", 
+    "name": "ChatGPT Prompts To Help You Code",
+    "content": "ChatGPT is an incredibly useful tool for developers. Here are some prompts to make your experience easier ....", 
     "user_id": 2
   },
   {
-    "name": "Test",
-    "content": "Lorem Ipsum",
+    "name": "Javascript Interview Questions",
+    "content": "Javascript is a powerful language, but it has its quirks. Here are some interview questions you may come across ....",
     "user_id": 3
   }
 ]

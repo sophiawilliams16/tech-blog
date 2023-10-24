@@ -28,28 +28,82 @@ router.get("/", async (req, res) => {
     }
 });
 
-// GET post by id
+// GET single post by id and its related comments
 router.get("/post/:id", async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const postId = req.params.id;
+
+        const postData = await Post.findByPk(postId, {
             include: [
                 {
                     model: User,
                     attributes: ["name"],
                 },
+                // {
+                //     model: Comment,
+                //     include: {
+                //         model: User, 
+                //         attributes: ["name"],
+                //     }
+                // }
             ],
         });
 
+        if (!postData) {
+            return res.status(404).json({ message: "Post not found" });
+        }
+        
         const post = postData.get({ plain: true });
-        // renders "post.handlebars"
+
+        // // Find all comments related to the post
+        // const commentData = await Comment.findAll({
+        //     where: {
+        //         post_id: postId,
+        //     },
+        //     include: [
+        //         {
+        //             model: User,
+        //             attributes: ["name"],
+        //         }
+        //     ]
+
+        // });
+        // const comment = commentData.get({ plain: true });
+
+        // renders "singlepost.handlebars"
         res.render("singlepost", {
-            ...post,
+            ...post, 
+            // ...comment, // pass an array of comments
             logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+// // GET comment by id 
+// router.get("/comment/:id", async (req, res) => {
+//     try {
+//         const commentData = await Comment.findByPk(req.params.id, {
+//             include: [
+//                 {
+//                     model: User,
+//                     attributes: ["name"],
+//                 },
+//             ],
+//         });
+
+//         // 
+
+//         // renders "singlepost.handlebars"
+//         res.render("singlepost", {
+//             ...comment,
+//             logged_in: req.session.logged_in,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
