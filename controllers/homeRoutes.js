@@ -82,8 +82,6 @@ router.get("/login", (req, res) => {
     res.render("login");
 });
 
-// LOGOUT Route to destroy session 
-
 
 
 
