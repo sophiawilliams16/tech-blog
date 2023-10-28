@@ -39,21 +39,23 @@ router.get("/post/:id", async (req, res) => {
                     model: User,
                     attributes: ["name"],
                 },
-                // {
-                //     model: Comment,
-                //     include: {
-                //         model: User, 
-                //         attributes: ["name"],
-                //     }
-                // }
+                {
+                    model: Comment,
+                    include: {
+                        model: User, 
+                        attributes: ["name"],
+                    }
+                }
             ],
         });
 
+        
         if (!postData) {
             return res.status(404).json({ message: "Post not found" });
         }
         
         const post = postData.get({ plain: true });
+        console.log(post);
 
         // // Find all comments related to the post
         // const commentData = await Comment.findAll({
