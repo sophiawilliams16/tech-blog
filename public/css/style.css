@@ -1,5 +1,27 @@
+:root {
+  --pink: #f2cee6;
+  --beige: #e8dcb9;
+  --green: #c3dbc5;
+  --blue: #7798ab;
+  --midnight: #0d1b1e;
+}
+
 header, .post:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  background-color: var(--green);
+}
+
+body {
+  color: var(--midnight);
+}
+
+main {
+  background-color: var(--beige);
+  background-size: contain;
+}
+
+footer {
+  background-color: var(--blue);
 }
 
 .no-button {
@@ -7,12 +29,12 @@ header, .post:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: var(--midnight);
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: var(--blue);
   text-decoration: underline;
 }
