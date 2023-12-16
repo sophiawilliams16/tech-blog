@@ -1,15 +1,16 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# Mindscape Blog 
 
 ## Description
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept returns thousands of think pieces and tutorials from developers of all skill levels!
+Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept returns thousands of think pieces and tutorials from developers of all skill levels. 
 
 This application is a a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This site is built completely from scratch and deployed to Heroku. It follows the MVC paradigm in its architectural structure, and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+
+To view the live website click here: [Heroku Link](https://tech-blog-sophiawilliams-93e01027bee7.herokuapp.com/)
 
 ## Table of Contents
 
 -   [Installation](#installation)
--   [Usage](#usage)
 -   [Credits](#credits)
 -   [License](#license)
 
@@ -25,9 +26,6 @@ To install the project ...
 
 -   Run `nodemon server.js` to connect to the server.
 
-## Usage
-
-Please see this video link through Google Drive for a walk through of the functionality [LINK]().
 
 ## Credits
 
